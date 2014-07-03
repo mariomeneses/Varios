@@ -7,7 +7,22 @@
 		<body>
 			<div>agua</div>
 			<div>agua</div>
-			<form action="prueba.php" method="post">
+						<?php
+							if (isset($_POST['submit'])) {
+								
+							$day = $_POST['day'];
+							$month = $_POST['month'];
+							$year = $_POST['year'];
+
+							$nac = new DateTime($year.'-'.$month.'-'.$day);
+							$act = new DateTime(date('Y-m-d'));
+							$final = $nac->diff($act);
+							$edad = $final->y;
+
+							echo "edad ".$edad;
+							}
+						?>
+			<form action="" method="post">
 				<label for="day">day</label>
 					<select name="day" id="day"><option value="0">Día&nbsp;</option> <?php  for($i=1;$i<=31;$i++) { echo "<option value='".$i."'>".$i."</option>"; } ?></select>
 				<label for="month">month</label>
