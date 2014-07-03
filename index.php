@@ -13,6 +13,10 @@
 							$day = $_POST['day'];
 							$month = $_POST['month'];
 							$year = $_POST['year'];
+							
+								if (empty($_POST['day'])) {
+									echo "seleccione fecha";
+								}
 
 							$nac = new DateTime($year.'-'.$month.'-'.$day);
 							$act = new DateTime(date('Y-m-d'));
