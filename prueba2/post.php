@@ -4,7 +4,7 @@
 	$pass1 = $_POST['pass1'];
 
 	function val_name($name1){
-		if(preg_match("[A-Z a-z]", $name1)){
+		if(preg_match("/^[A-Z a-z]{3}+$/", $name1)){
 			return false;
 		}else{
 			return true;
@@ -12,7 +12,7 @@
 	}
 
 	function val_email($email1){
-		if (preg_match("[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}", $email1)) {
+		if (preg_match("/^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}+$/", $email1)) {
 			return false;
 		}else{
 			return true;
@@ -20,7 +20,7 @@
 	}
 
 	function val_pass1($pass1){
-		if (preg_match("[A-Z a-z 0-9]{3}", $pass1)) {
+		if (preg_match("/^[A-Z a-z 0-9]{3}+$/", $pass1)) {
 			return false;
 		}else{
 			return true;
