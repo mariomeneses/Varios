@@ -29,4 +29,18 @@ function validar() {
    		alert(name_err + email_err + pass_err);
    		return false;
    	}
+
+   	//Si pasa las validaciones, enviar form modo async
+   	$.ajax({
+      url: "post.php",
+      type: "POST",
+      data: $("#data").serialize(),
+      beforeSend: function() {
+        $("#result1").empty().html('<h1>Procesando...</h1>');
+      },
+      success: function(results) {
+        $("#result1").delay(1000).empty().html('<h1>' + results + '</h1>');
+      }
+    });
+    return false;
 }

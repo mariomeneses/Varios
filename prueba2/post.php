@@ -35,5 +35,7 @@
 	
 	if (!empty($error)) {
 		echo $error;
+	} else {
+		echo "Formulario guardado!";
 	}
 ?>
