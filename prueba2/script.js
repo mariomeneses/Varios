@@ -26,7 +26,9 @@ function validar() {
    		}
 
    	if (name_err !== '' || email_err !== '' || pass_err !== '') {
-   		alert(name_err + email_err + pass_err);
+   		$(".error_class").empty().html(name_err + email_err + pass_err).fadeIn(2000, function(){
+        $(this).fadeOut();
+      });
    		return false;
    	}
 

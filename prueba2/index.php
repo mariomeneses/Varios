@@ -13,6 +13,7 @@
     <fieldset id="contact_form1">
         Registro        
         <div id="result1"></div>
+        <div class="error_class" style="color:red; display:none;"></div>
             <form action="post.php" name="data" id="data" method="post" onsubmit="return validar();">
             <label for="name1"><span>Nombre</span>
                 <input type="text" name="name1" id="name1"  />
