@@ -1,5 +1,5 @@
 function validar() {
-	var name_err = email_err = pass_err = '';
+	var name_err = email_err = pass_err = age_err =  edad_err = '';
 	var name1 = document.getElementById("name1").value;
 	var namexp = /[A-Z a-z]{3}/;
 		if (namexp.test(name1)) {
@@ -25,12 +25,31 @@ function validar() {
 			pass_err = 'mal pass';
    		}
 
-   	if (name_err !== '' || email_err !== '' || pass_err !== '') {
-   		$(".error_class").empty().html(name_err + email_err + pass_err).fadeIn(2000, function(){
+    var day = document.getElementById("day").value;
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+
+    if (day!=='' || month !=='' || year !=='' ) {
+        var today = new Date();
+        var birthDate = new Date(year, month, day);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (age > 18) {
+          //alert('mayor');
+        }else{
+          age_err = 'menor de edad';
+        }
+    }else{
+        edad_err = 'ingrese edad';
+    }
+
+   	if (name_err !== '' || email_err !== '' || pass_err !== '' || age_err !=='' || edad_err !=='') {
+   		$(".error_class").empty().html(name_err + email_err + pass_err + age_err + edad_err).fadeIn(2000, function(){
         $(this).fadeOut();
       });
    		return false;
    	}
+    return false;
 
    	//Si pasa las validaciones, enviar form modo async
    	$.ajax({
