@@ -5,8 +5,8 @@
 	$day = $_POST['day'];
 	$month = $_POST['month'];
 	$year = $_POST['year'];
-	var_dump($_POST);
 	$fecha = $year.'-'.$month.'-'.$day;
+	//var_dump($_POST);
 
 	function val_name($name1){
 		if(preg_match("/^[A-Z a-z]{3,}+$/", $name1)){
@@ -33,12 +33,12 @@
 
 	}
 
-	function val_age($nac){ var_dump($nac); die();
+	function val_age($nac){ //var_dump($nac); die();
 		$nac = new DateTime($nac);
 		$act = new DateTime(date('Y-m-d'));
 		$final = $nac->diff($act);
 		$edad = $final->y;
-			if (edad>18) {
+			if ($edad>18) { //corregir
 				return true;
 			}else{
 				return false;
@@ -57,7 +57,6 @@
 	} else {
 		echo "Formulario guardado!";
 	}
+	//FALTA VALIDAR Q NO ENTRE VACIA LA FECHA
 ?>
 
-
-FALTA VALIDAR Q NO ENTRE VACIA LA FECHA

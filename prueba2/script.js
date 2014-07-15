@@ -49,7 +49,6 @@ function validar() {
       });
    		return false;
    	}
-    return false;
 
    	//Si pasa las validaciones, enviar form modo async
    	$.ajax({
