@@ -46,5 +46,24 @@
             </label>
         </form>
     </fieldset>
+
+    <fieldset id="login">
+        LOGIN        
+        <div id="result2"></div>
+        <div class="error_class2" style="color:red; display:none;"></div>
+            <form action="login.php" name="login" id="login" method="post" onsubmit="return validarLogin();">
+            <label for="useradmin"><span>Nombre</span>
+                <input type="text" name="useradmin" id="useradmin"  />
+            </label>
+            <label for="passadmin"><span>Contraseña</span>
+                <input type="password" name="passadmin" id="passadmin"/>
+            </label>
+            <label><span>&nbsp;</span>
+                <input class="submit_btn2" id="submit_btn2" type="submit" value="LOGIN">
+            </label>
+        </form>
+    </fieldset>
+        
+
 </body>
 </html>
