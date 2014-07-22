@@ -1,3 +1,10 @@
+<?php
+    require_once 'class/main.class.php';
+    $main = new mainSys;
+    $main->init();
+//    mainSys::init();
+    die();
+?>
 <!doctype html>
 <html lang="es">
 
