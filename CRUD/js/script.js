@@ -80,9 +80,11 @@ function validar() {
     });
     return false;
 }
+
 function showUser(){
       $('#datagrid').load('function/showuser.php'); 
 }
-function eliminar(){
-    return confirm( mensaje ); 
-}
+
+   function confirmar(){ 
+      return confirm("Si Borra este registro no se podra recuperar, ¿confirma el borrado del registro?") 
+  } 

@@ -16,7 +16,7 @@ foreach ($usuarios as $fila){
     	foreach ($fila as $celda){
             echo "<td> $celda  </td>";
     	}
-    	echo '<td><a href="function/eliminar.php?id='.trim($fila['nombre']).'" >Eliminar</a></td>';
+    	echo '<td><a onClick="return confirmar();" href="function/eliminar.php?id='.trim($fila['nombre']).'" >Eliminar</a></td>';
     echo '</tr>';
 }
 ?>
